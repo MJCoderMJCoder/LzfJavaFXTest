@@ -1,0 +1,3 @@
+1.去控制面板卸载RefreshRateService（没找到可以无视）
+2.点击RefreshRateService.msi运行
+3.重启

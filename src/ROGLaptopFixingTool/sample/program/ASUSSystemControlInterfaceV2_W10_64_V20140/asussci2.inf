@@ -1,0 +1,236 @@
+;======================================================================
+;
+; Copyright (c) ASUSTek Computer Inc. (2018)
+;
+; Module Name:
+;     asussci2.inf
+;
+; Abstract:
+;     INF file for installing ASUS System Control Interface V2
+;
+; Installation Notes:
+;     	
+;======================================================================
+[Version]
+Signature			= "$Windows NT$"
+Class                   	= System
+ClassGUID               	= {4D36E97D-E325-11CE-BFC1-08002BE10318}
+Provider			= "ASUSTek Computer Inc."
+DriverVer			= 05/08/2019,2.0.14.0
+CatalogFile.ntamd64		= asussci2.cat
+
+
+[Manufacturer]
+%MfgName% = ASUP, ntamd64
+
+[ASUP.ntamd64]
+%DeviceDesc1% = NO_DRV64, ACPI\ASUS2018
+
+[NO_DRV64]
+Include = machine.inf
+Needs = NO_DRV
+CopyFiles = PackageCopySoftwareManager    ;Software Manager service
+CopyFiles = PackageCopyOptimization	  ;Optimization service
+CopyFiles = PackageCopyDiagnosis	  ;System Diagnosis service
+CopyFiles = PackageCopyAnalysis			;Analysis service
+CopyFiles = PackageCopySync               ;Sync service
+
+[NO_DRV64.Services]
+Include = machine.inf
+Needs = NO_DRV.Services
+AddService = ASUSSoftwareManager, 0x00000800, SoftwareManager_Usersrv_ServiceInstall    ;Software Manager service
+AddService = ATKWMIACPIIO, , Optimization_Drv_ServiceInstall			;Optimization driver
+AddService = ASUSOptimization, 0x00000800, Optimization_Srv_ServiceInstall		;Optimization service
+AddService = ASUSSystemDiagnosis, 0x00000800, SystemDiagnosisServiceInstall     ;System Diagnosis service
+AddService = ASUSSAIO,0x00000800,Analysis_DriverInstall				         ;Analysis driver
+AddService = ASUSSystemAnalysis,0x00000800,Analysis_ServiceInstall		     ;Analysis service
+AddService = ASUSSync,0x00000800,Sync_ServiceInstall                                    ;Sync service
+
+[DestinationDirs]
+DefaultDestDir 		    = 13
+PackageCopySoftwareManager  = 13,%SoftwareManagerFolder%    ;Software Manager service
+PackageCopyOptimization	    = 13,%OptimizationFolder%       ;Optimization service
+PackageCopyDiagnosis 	    = 13,%SystemDiagnosisFolder%	;System Diagnosis Service
+PackageCopyAnalysis 	= 13,%AnalysisFolder%		;Analysis service
+PackageCopySync             = 13,%SyncFolder%               ;Sync service
+
+
+; ==============================================================
+;                    Software Manager service
+; ==============================================================
+[PackageCopySoftwareManager]
+alvupdt.dll
+alvupdt.ini
+AsusSetup.exe
+AsusSetupEx.exe
+AsusSoftwareManager.exe
+bshelper.dll
+bsitf.dll
+bsitf.sys
+BusinessIntelligenceCollection.dll
+BusinessIntelligenceTransfer.dll
+BusinessIntelligenceCPlusLib.dll
+AsusSoftwareManagerAgent.exe
+GiftBox.Common.dll
+GiftBox.Core.dll
+GiftBoxServiceAgent.dll
+protobuf-net.dll
+AsusUpdateChecker.exe
+
+[SoftwareManager_Usersrv_ServiceInstall]
+DisplayName    = "ASUS Software Manager"
+ServiceType    = 0x00000010      ; SERVICE_WIN32_SHARE_PROCESS
+StartType      = 2               ; SERVICE_DEMAND_START, SERVICE_AUTO_START ==> 2
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\%SoftwareManagerFolder%\AsusSoftwareManager.exe
+
+
+; ==============================================================
+;                    Optimization service                         
+; ==============================================================
+[PackageCopyOptimization]
+AsusHotkeyExec.exe
+AsusOptimizationStartupTask.exe
+AsusOptimization.exe
+AsusOSD.exe
+atkwmiacpi64.sys
+AsusSplendid.exe
+CCTAdjust.dll
+VideoEnhance_v406_20180511_x64.dll
+ASUS Optimization 36D18D69AFC3.xml
+
+[Optimization_Drv_ServiceInstall]
+DisplayName    = "ATKWMIACPI Driver"
+ServiceBinary  = %13%\%OptimizationFolder%\atkwmiacpi64.sys
+ServiceType    = 1
+StartType      = 1
+ErrorControl   = 1
+
+[Optimization_Srv_ServiceInstall]
+DisplayName    = "ASUS Optimization"
+ServiceBinary  = %13%\%OptimizationFolder%\AsusOptimization.exe
+ServiceType    = 16
+StartType      = 2
+ErrorControl   = 1
+LoadOrderGroup = ShellSvcGroup
+
+[PackageCopyDiagnosis]
+AsusSystemDiagnosis.exe
+
+[SystemDiagnosisServiceInstall]
+DisplayName    = "ASUS System Diagnosis"
+ServiceType    = 0x00000010      ; SERVICE_WIN32_SHARE_PROCESS
+StartType      = 2               ; SERVICE_DEMAND_START, SERVICE_AUTO_START ==> 2
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %13%\%SystemDiagnosisFolder%\AsusSystemDiagnosis.exe
+
+
+; ==============================================================
+;                    Analysis service                         
+; ==============================================================
+[PackageCopyAnalysis]
+AsusSystemAnalysis.exe
+acthelper.dll
+AsusWinIo64.dll
+default.json
+ASUSSAIO.sys
+ChkReg.dll
+
+[Analysis_DriverInstall]
+DisplayName    = "ASUS System Analysis Driver"
+ServiceBinary  = %13%\%AnalysisFolder%\ASUSSAIO.sys
+ServiceType    = 1
+StartType      = 1
+ErrorControl   = 1
+
+[Analysis_ServiceInstall]
+DisplayName    = "ASUS System Analysis"
+ServiceBinary  = %13%\%AnalysisFolder%\AsusSystemAnalysis.exe
+ServiceType    = 16
+StartType      = 2
+ErrorControl   = 1
+
+; ==============================================================
+;                    Sync service                         
+; ==============================================================
+[PackageCopySync]
+AsusSyncSvc.exe
+AsusSyncClient.dll
+WP2P.dll
+WP2PExt.exe
+Assist.dll
+BLEAPI.dll
+
+[Sync_ServiceInstall]
+DisplayName    = "ASUS Sync"
+ServiceBinary  = %13%\%SyncFolder%\AsusSyncSvc.exe
+ServiceType    = 16
+StartType      = 2
+ErrorControl   = 1
+
+[SourceDisksFiles]
+; ================== Analysis service, diskid = 3 ===========================
+AsusSystemAnalysis.exe = 3
+acthelper.dll = 3
+AsusWinIo64.dll = 3
+default.json = 3
+ASUSSAIO.sys = 3
+ChkReg.dll = 3
+; ================== System Diagnosis service, diskid = 4 ===========================
+AsusSystemDiagnosis.exe = 4
+; ================== Optimization service, diskid = 5 ===========================
+AsusHotkeyExec.exe = 5
+AsusOptimizationStartupTask.exe = 5
+AsusOptimization.exe = 5
+AsusOSD.exe = 5
+atkwmiacpi64.sys = 5
+AsusSplendid.exe = 5
+CCTAdjust.dll = 5 
+VideoEnhance_v406_20180511_x64.dll = 5
+ASUS Optimization 36D18D69AFC3.xml = 5
+
+; ================== Software Manager service, diskid = 6 ===========================
+alvupdt.dll = 6
+alvupdt.ini = 6
+AsusSetup.exe = 6
+AsusSetupEx.exe = 6
+AsusSoftwareManager.exe = 6
+bshelper.dll = 6
+bsitf.dll = 6
+bsitf.sys = 6
+BusinessIntelligenceCollection.dll = 6
+BusinessIntelligenceTransfer.dll = 6
+BusinessIntelligenceCPlusLib.dll = 6
+AsusSoftwareManagerAgent.exe = 6
+GiftBox.Common.dll = 6
+GiftBox.Core.dll = 6
+GiftBoxServiceAgent.dll = 6
+protobuf-net.dll = 6
+AsusUpdateChecker.exe = 6
+
+; ================== Sync service, diskid = 7 ===========================
+AsusSyncSvc.exe = 7
+AsusSyncClient.dll = 7
+WP2P.dll = 7
+WP2PExt.exe = 7
+Assist.dll = 7
+BLEAPI.dll = 7
+
+
+[SourceDisksNames]
+1 = %MfgName%,,,
+3 = %MfgName%,,,\%AnalysisFolder%		;Analysis service, diskid = 3
+4 = %MfgName%,,,\%SystemDiagnosisFolder%		;System Diagnosis Service, diskid = 4
+5 = %MfgName%,,,\%OptimizationFolder%			;Optimization service, diskid = 5
+6 = %MfgName%,,,\%SoftwareManagerFolder%	        ;Software Manager service, diskid = 6
+7 = %MfgName%,,,\%SyncFolder%                           ;Sync service, diskid = 7
+
+[Strings]
+MfgName			= "ASUS"
+DeviceDesc1    		= "ASUS System Control Interface V2"
+SoftwareManagerFolder   = "ASUSSoftwareManager"
+OptimizationFolder	= "ASUSOptimization"
+SystemDiagnosisFolder   = "ASUSSystemDiagnosis"
+AnalysisFolder		= "ASUSSystemAnalysis"
+SyncFolder		= "ASUSSync"
+

@@ -1,0 +1,16 @@
+{
+  "thermal": "disable",
+  "battery_power": "disable",
+  "systeminfo": "disable",
+  "upload": "disable",
+  "poweronoff": "disable",
+  "suspend_resume": "disable",
+  "ac_dc": "disable",
+  "lid_open_close": "disable",
+  "quiet_fan": "disable",
+  "battery_health": "disable",
+  "wmi_event": "disable",
+  "intervalTimer": "0",
+  "totalCollectTime": "12",
+  "downloadSetting" : "d1"
+}

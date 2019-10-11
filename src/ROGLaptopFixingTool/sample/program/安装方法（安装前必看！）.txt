@@ -1,0 +1,29 @@
+注意事项：
+1. 安装时确认没有360之类的软件，不然会安装失败！（包括麦卡菲卡，巴斯基等）
+2. 安装时确认路径里没有中文，不然会找不到文件！
+3. Q群下载用户将整个安装文件夹复制到C盘根目录进行操作，不然会找不到文件。百度盘用户不用
+4. 不需要卸载ROGLiveService，此安装包会自行覆盖。
+5. 如果安装完CPU信息不显示，重新运行安装程序，根据CPU型号选择F或G修复。
+
+安装方法：
+1.在控制面板中卸载Armoury Crate Service Core（没有可以无视）
+2.在控制面板中卸载Armoury Create Service
+3.卸载Armoury Crate
+4.重启电脑
+5.右键安装程序，选择以管理员权限运行
+6.根据需求选择对应的选项进行安装
+6.重启电脑
+7.从windows商店安装Armoury Crate
+
+注释：
+A选项：安装奥创相关组件至稳定版本（建议非枪3和冰锐机型选择）
+	service：2.3.0，RogliveService：1.0.9.6
+B选项：安装奥创相关组件至最新版本（建议枪3和冰锐机型选择）
+	service：2.3.5，RogliveService：1.0.9.6
+C选项：安装RogLiveService
+	RogliveService：1.0.9.6
+D选项：安装ASUS System Control Interface V2
+E选项：更新所有奥创组件到最新
+	service：2.3.5，RogliveService：1.0.9.6
+F选项：若A或B安装完CPU信息不显示，运行F（9750H的CPU）
+G选项：若A或B安装完CPU信息不显示，运行G（8750H的CPU）

@@ -1,0 +1,8 @@
+<ASUS_GAMING_CENTER IsDesktopConfigureFile="0" Version="0.0.0" RequiredGCVersion="3.0.0">
+  <EncryptedData Type="http://www.w3.org/2001/04/xmlenc#Element" xmlns="http://www.w3.org/2001/04/xmlenc#">
+    <EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />
+    <CipherData>
+      <CipherValue>RVIgSU5DLl9w+RD3iioGBQMyiwDMMmGXSEAzvW0yxD29tx7EQ91tgSJ9KI870WOmlFZQMi+qmhvKVUKnpcuKCtk/eWqbEx3heA2fGP9+x6e84ZSzNN5Ogt9t+dKTwuLLA3h7b/ho/gWWUd48hkA7GenEXb0+38X20/l4WHgcSwl4WQWNcwXUna5OMvn/JjyV1Bv1PeYedU9u0oKWu6IDNIspQhUl/d81Lb5rUjQRBwGS7i2ZGMzl9w6aTLKcpu/MDI13PNrejN+qWmEbJ0K6ayNMdrkhhVVHEYqoD96CJRGfsE7lbRrGrmL54vLIHrX/V+LQExDxB7BWLwS93R4bgpuIBOrDD3coBeEb06dzadI+SvZ5FNPCxT5Tao4iYqAfegRiM1MmFnmdK0hCtEew8W/hHMDhcns4zrIy67aOLAxHzQvi7s6BzLEyUShqR4nFkecoM/NmzRxzFfbhQ7wq4wz/vHLm9IM4wcUUAzL9SUoU4zKn1Utuf5rvSE+VyEpJ8HUZBbClvW9oJu9wxbrgLJuPdENP5pFhdvcvAol3NqeNaR1GM5uAWS0Niolkmg4Lct6yuSpRu7R7XiwjWmwubF7bMuv9om74UjmTn19L+KaM37gMMsccnDWbwllQcDAlyBmSWs+prWpceNOLJ5AZMh76cFpaoWiPHHPMdEVmxUo=</CipherValue>
+    </CipherData>
+  </EncryptedData>
+</ASUS_GAMING_CENTER>

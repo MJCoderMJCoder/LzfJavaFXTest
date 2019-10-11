@@ -1,0 +1,174 @@
+v2.0.1
+1. Fix TT Bug - 20027332: [RS5][G531GT][ARMOURY CRATE]插入AC Charger，將熒幕刷新率設置為60Hz,重啟機台後在AC 主頁面第一次點擊Panel Overdrive時，會閃爍高亮。
+2. Fix TT Bug - 20027333: [RS5][G531GT[ARMOURY CRATE]在AC首頁中將Panel Overdrive開啟，重啟機台，Panel Overdrive會變為關閉。
+
+v2.0.0
+1. Modify the detection refresh rate to support 144Hz or more.
+2. Fix RefreshRateService.exe system.OverflowException issus (G531GT factory issue)
+3. Change setup wizard language to English
+
+v1.0.17
+1. Add 240Hz Panel can enable/disable OD function.
+
+v1.0.16
+1. Fix the bug that RefreshRateService sometimes would not set the OD pin (GPP_D4) to keep last setting of the pin before powering down.
+
+v1.0.15
+1. Fix the bug that RefreshRateService will not work if device's Windows OS version is RS5.
+
+v1.0.14
+1. Fix ,(144Hz)Unplug the adapter and reboot. Plug in the adapter on the reboot, ArmouryCrate UI will show incorrect(gray out)
+
+v1.0.13
+1. Fix ,Service will stopped when install ASUS FRQ Control(Workaround for Intel DDRS bug)
+2. Fix ,Service will stopped when Power event and user control OD event trigger in same time
+
+v1.0.12
+1. Add ,Now will notify ArmouryCrate turn icon show or gray
+144Hz(AC mode),show
+60Hz,144Hz(DC mode) ,auto gray
+2. Add ,ODControl.dll Get mode 2
+Get Mode 0 : OD Off
+Get Mode 1 : OD On
+Get Mode 2 : Invalid ,when 60Hz,144Hz(DC mode)
+
+V1.0.11(v1.0.12 remove)
+1.	Add ,ODControl.dll now will turn icon show or gray
+
+Get Icon 1 : 144Hz(AC mode),show
+Get Icon 0 : 60Hz,144Hz(DC mode) ,auto gray 
+
+V1.0.10(= test version v9.0.11)
+1.	Fix ,Service will stopped when leaving S3/S4(sleep mode/Restart mode) , Once in 15 times
+	Root Cause : IOException occurred during the communication between processes. When IOException occurred, not catch IOException . As a result, the OS forcedly closed the APP.
+
+	
+V1.0.9
+1. Fix , Services will stopped on Too many power events trigger
+2. Fix , not clear OD user setting when uninstall app(1.0.9 lost this ReleaseNote)
+
+known issue
+(FX505) Service will stopped when leaving S3/S4(sleep mode/Restart mode) , Once in 15 times
+
+
+V1.0.8 
+Major structure change
+
+Add new use WMIMethod(need BIOS support)
+WMIMethod(DSTS, 0x00050020)         // Get OD supported panel status
+Return: Bit 16:			1
+        Bit 0: 			OD supported panel	//1 = Support OD panel , 0 = Not supported OD panel
+		Bit 1 ~ 15:     Reserved
+WMIMethod(GLCD)						// Get panel EDID from BIOS
+Arguments: 		None		None
+Return Value	XXX			4 bytes EDID data
+							Byte 3 2 1 0, Byte 3 2: Vendor ID ,Byte 1 0: Device ID
+							
+RefreshRateService App behavior change:
+1.	Decision whether is OD panel by WMIMethod(DSTS, 0x00050020) and WMIMethod(GLCD) from BIOS
+2.	Control UI change, GameVisual =>  ARMOURY CRATE
+3.	Add ODControl.dll for ARMOURY CRATE to control OD
+
+ODControl.dll feature
+IsInstalled : 
+decide OD On/off UI Whether to show , True:Show UI(Support OD panel) , False:Not show UI(Not supported OD panel)
+Set Mode 1 : turn OD On
+Set Mode 0 : turn OD Off
+Get Mode : Get OD now setting, 1 = OD On , 0 = OD Off
+
+Support OD panel App behavior:
+ ------------------------------------------------------------------
+| ARMOURY CRATE		 | Power_state		| Refresh Rate | OD actual | 
+| ( On/Off)			 | (Online/Offline) | (Hz)		   | On/Off	   |
+|------------------------------------------------------------------|
+| On				 |	Online			| 144	       | On        |
+|------------------------------------------------------------------|
+| On				 |	Offline			| 144	       | Off       |
+|------------------------------------------------------------------|
+| On				 |	Online			| 60 	       | Off       |
+|------------------------------------------------------------------|
+| On				 |	Online			| 60 	       | Off       |
+|------------------------------------------------------------------|
+| Off				 |	Online/ Offline	| 144/ 60	   | Off       |
+ ------------------------------------------------------------------
+
+Not support OD panel App behavior:
+ARMOURY CRATE will not show this UI , Service has no effect
+ 
+
+V1.0.7
+1. Fix ,When RefreshRate = 144Hz ,Power offline and GameVisual Setting OD ON ,connect AC will not turn OD ON until GameVisual Setting OD ON again
+
+ 
+RefreshRateService behavior list
+ 
+AUO panel  (OD panel  ,MONITOR\AUO82ED)
+ ------------------------------------------------------------------
+| GameVisual Setting | Power_state		| Refresh Rate | OD actual | 
+| ( On/Off)			 | (Online/Offline) | (Hz)		   | On/Off	   |
+|------------------------------------------------------------------|
+| On				 |	Online			| 144	       | On        |
+|------------------------------------------------------------------|
+| On				 |	Offline			| 144	       | Off       |
+|------------------------------------------------------------------|
+| On				 |	Online			| 60 	       | Off       |
+|------------------------------------------------------------------|
+| On				 |	Online			| 60 	       | Off       |
+|------------------------------------------------------------------|
+| Off				 |	Online/ Offline	| 144/ 60	   | Off       |
+ ------------------------------------------------------------------
+
+INX panel (Not OD panel )
+ ------------------------------------------------------------------
+| GameVisual Setting | Power_state		| Refresh Rate | OD actual | 
+| ( On/Off)			 | (Online/Offline) | (Hz)		   | On/Off	   |
+|------------------------------------------------------------------|
+| Diable			 |	Online/ Offline	| 144/ 60	   | Off       |
+ ------------------------------------------------------------------
+ 
+V1.0.6
+1. Fix ,When Service initial Start, Service probability can't distinguish OD_panel and not OD_panel
+
+V1.0.5
+1. Fix ,Catch Error NullReferenceException to avoid Service not work
+
+v1.0.4
+1. Add ,Add decision logic to distinguish whether OD panel while multi panel in same project
+2. Fix ,An error occurred while install packages using the "Repair" option. This option was removed from previous versions.
+3. Fix ,OD doesn't turn off when panel use 144Hz refresh rate and AC isn't connected
+
+v1.0.3
+1. Fix ,When the new panel RefreshRate = 60Hz, the service detected an error without closing the OD
+
+v1.0.2
+1. Add ,Add bat file to install and uninstall
+2. Fix ,Fix decision logic, the behavior of this version of OD ON/OFF is based on the spec provided by Donna1 Teng
+
+OD On/Off Spec
+WMIMethod(DSTS, 0x00050019)  // Get Panel OD
+Return:	Bit 16:       		1
+		Bit 0:   			OD function is on  // 1 = OD function is on . 0 = OD function is off
+		Bit 1 ~ 15:        	Reserved
+
+WMIMethod(DEVS, 0x00050019, Arg1)         // Set Panel OD
+Arg1:	0:                  Turn OD function off (GPP_K5 pull high)             
+        1:                  Turn OD function on (GPP_K5 pull low)         
+Return: 1:                  Success
+        0:                  Fail
+
+		
+v1.0.1
+1. Add ,Add decision logic whether AC is connected or not, OD will not be ON when AC is not connected
+2. Feature ,This version is a beta version ,the behavior of this version of OD ON/OFF for EE reverse OD high/low panel
+
+OD On/Off Spec
+WMIMethod(DSTS, 0x00050019)  // Get Panel OD
+Return:	Bit 16:       		1
+		Bit 0:   			OD function is on  // 0 = OD function is on . 1 = OD function is off
+		Bit 1 ~ 15:        	Reserved
+
+WMIMethod(DEVS, 0x00050019, Arg1)         // Set Panel OD
+Arg1:	0:                  Turn OD function on (GPP_K5 pull low)             
+        1:                  Turn OD function off (GPP_K5 pull high)         
+Return: 1:                  Success
+        0:                  Fail

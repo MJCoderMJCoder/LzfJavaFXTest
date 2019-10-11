@@ -1,0 +1,3 @@
+﻿[INF] [2019-04-19 10:27:16.765] InitialSetting::.cctor, argument count : 2
+[INF] [2019-04-19 10:27:16.766] InitialSetting::.cctor, argument : -Initialization
+[INF] [2019-04-19 10:27:16.766] InitialSetting::.cctor, InitialSetting.ini Path : D:\_GC3\Release\ARMOURY_CRATE_Service_20190418_V2.1.6_Release\ArmouryCrateService_V2.1.6\ArmouryCrateService\Service\Data\InitialSetting.ini

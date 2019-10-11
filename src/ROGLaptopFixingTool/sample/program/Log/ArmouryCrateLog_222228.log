@@ -1,0 +1,70 @@
+﻿[INF] [2019-07-23 22:22:28.042] App::.cctor, Being -  
+[INF] [2019-07-23 22:22:28.044] RetreiveCommandLine::RetreiveCommandLine, Being - 
+[INF] [2019-07-23 22:22:28.044] RetreiveCommandLine::RetreiveCommandLine, the count of Command Line : 1
+[INF] [2019-07-23 22:22:28.044] RetreiveCommandLine::RetreiveCommandLine, End - 
+[INF] [2019-07-23 22:22:28.044] App::.cctor, RetreiveCommandLine   -  10
+[INF] [2019-07-23 22:22:28.044] CPUVendor::CPUVendor, Being - 
+[INF] [2019-07-23 22:22:28.044] CPUVendor::CPUVendor, Open Local Machine - success
+[INF] [2019-07-23 22:22:28.045] CPUVendor::CPUVendor, Open HARDWARE\DESCRIPTION\System\CentralProcessor\0 - success
+[INF] [2019-07-23 22:22:28.045] CPUVendor::CPUVendor, Vendor Indentifier - GenuineIntel
+[INF] [2019-07-23 22:22:28.045] CPUVendor::CPUVendor, End - 0
+[INF] [2019-07-23 22:22:28.045] App::.cctor, VendorID -  0
+[INF] [2019-07-23 22:22:28.045] App::.cctor, ROG Status Flag -  False
+[INF] [2019-07-23 22:22:28.046] InstallFlowProcess::InstallFlowProcess, Being - VendorID 0
+[INF] [2019-07-23 22:22:28.047] RunXTUPackageProcess::RunXTUPackageProcess, Being - path : C:\Users\Justin\Downloads\ArmouryCrateService_ASUS_W10_64_V230\9807\ CommandLine : 10
+[INF] [2019-07-23 22:22:28.047] RunXTUPackageProcess::RunXTUPackageProcess, Argument - /passive /norestart
+[INF] [2019-07-23 22:22:28.047] InstallMSI::InstallMSI, Being - MSI Path : C:\Users\Justin\Downloads\ArmouryCrateService_ASUS_W10_64_V230\9807\ File Name : Intel\SSCERuntime_x86-ENU.msi argument : /passive /norestart
+[INF] [2019-07-23 22:22:28.047] InstallMSI::InstallMSI, WorkingDirectory :C:\Users\Justin\Downloads\ArmouryCrateService_ASUS_W10_64_V230\9807\
+[INF] [2019-07-23 22:22:28.047] InstallMSI::InstallMSI, File Name :msiexec Argument : /i Intel\SSCERuntime_x86-ENU.msi /passive /norestart
+[INF] [2019-07-23 22:22:29.009] InstallMSI::InstallMSI, Process Exit Code : 0
+[INF] [2019-07-23 22:22:29.009] InstallMSI::InstallMSI, End - 0
+[INF] [2019-07-23 22:22:29.009] RunXTUPackageProcess::RunXTUPackageProcess, Intel\SSCERuntime_x86-ENU.msi - 0
+[INF] [2019-07-23 22:22:29.009] InstallMSI::InstallMSI, Being - MSI Path : C:\Users\Justin\Downloads\ArmouryCrateService_ASUS_W10_64_V230\9807\ File Name : Intel\SSCERuntime_x64-ENU.msi argument : /passive /norestart
+[INF] [2019-07-23 22:22:29.009] InstallMSI::InstallMSI, WorkingDirectory :C:\Users\Justin\Downloads\ArmouryCrateService_ASUS_W10_64_V230\9807\
+[INF] [2019-07-23 22:22:29.009] InstallMSI::InstallMSI, File Name :msiexec Argument : /i Intel\SSCERuntime_x64-ENU.msi /passive /norestart
+[INF] [2019-07-23 22:22:29.740] InstallMSI::InstallMSI, Process Exit Code : 0
+[INF] [2019-07-23 22:22:29.740] InstallMSI::InstallMSI, End - 0
+[INF] [2019-07-23 22:22:29.740] RunXTUPackageProcess::RunXTUPackageProcess, Intel\SSCERuntime_x64-ENU.msi0
+[INF] [2019-07-23 22:22:29.740] InstallExe::InstallExe, Being - MSI Path : C:\Users\Justin\Downloads\ArmouryCrateService_ASUS_W10_64_V230\9807\ File Name : Intel\2012\vcredist_x86.exe argument : /passive /norestart
+[INF] [2019-07-23 22:22:29.740] InstallExe::InstallExe, WorkingDirectory :C:\Users\Justin\Downloads\ArmouryCrateService_ASUS_W10_64_V230\9807\
+[INF] [2019-07-23 22:22:29.740] InstallExe::InstallExe, File Name :Intel\2012\vcredist_x86.exe Argument : /passive /norestart
+[INF] [2019-07-23 22:22:31.168] InstallExe::InstallExe, Process Exit Code : 0
+[INF] [2019-07-23 22:22:31.168] InstallExe::InstallExe, End - 0
+[INF] [2019-07-23 22:22:31.168] InstallExe::InstallExe, Being - MSI Path : C:\Users\Justin\Downloads\ArmouryCrateService_ASUS_W10_64_V230\9807\ File Name : Intel\2012\vcredist_x64.exe argument : /passive /norestart
+[INF] [2019-07-23 22:22:31.169] InstallExe::InstallExe, WorkingDirectory :C:\Users\Justin\Downloads\ArmouryCrateService_ASUS_W10_64_V230\9807\
+[INF] [2019-07-23 22:22:31.169] InstallExe::InstallExe, File Name :Intel\2012\vcredist_x64.exe Argument : /passive /norestart
+[INF] [2019-07-23 22:22:32.386] InstallExe::InstallExe, Process Exit Code : 0
+[INF] [2019-07-23 22:22:32.386] InstallExe::InstallExe, End - 0
+[INF] [2019-07-23 22:22:32.730] InstallMSI::InstallMSI, Being - MSI Path : C:\Users\Justin\Downloads\ArmouryCrateService_ASUS_W10_64_V230\9807\ File Name : Intel\ArmouryCrateServiceCore.msi argument : /passive /norestart
+[INF] [2019-07-23 22:22:32.730] InstallMSI::InstallMSI, WorkingDirectory :C:\Users\Justin\Downloads\ArmouryCrateService_ASUS_W10_64_V230\9807\
+[INF] [2019-07-23 22:22:32.730] InstallMSI::InstallMSI, File Name :msiexec Argument : /i Intel\ArmouryCrateServiceCore.msi /passive /norestart
+[INF] [2019-07-23 22:22:37.753] InstallMSI::InstallMSI, Process Exit Code : 3010
+[INF] [2019-07-23 22:22:37.753] InstallMSI::InstallMSI, End - 3010
+[INF] [2019-07-23 22:22:37.753] RunXTUPackageProcess::RunXTUPackageProcess, Intel\ARMOURYCRATECore.msi3010
+[INF] [2019-07-23 22:22:38.047] RunXTUPackageProcess::RunXTUPackageProcess, End - 3010
+[INF] [2019-07-23 22:22:38.047] InstallFlowProcess::InstallFlowProcess, returen code : 3010
+[INF] [2019-07-23 22:22:38.048] CopyGameProfileZip::CopyGameProfileZip, SetupDirectory : C:\Users\Justin\Downloads\ArmouryCrateService_ASUS_W10_64_V230\9807
+[INF] [2019-07-23 22:22:38.048] CopyGameProfileZip::CopyGameProfileZip, Game Profile Zip File : C:\Users\Justin\Downloads\ArmouryCrateService_ASUS_W10_64_V230\9807\Service\Data\GameProfile.zip
+[INF] [2019-07-23 22:22:38.055] RunConfigInstaller::RunConfigInstaller, SetupDirectory : C:\Users\Justin\Downloads\ArmouryCrateService_ASUS_W10_64_V230\9807
+[INF] [2019-07-23 22:22:38.055] GetModel::GetModel, Being - 
+[INF] [2019-07-23 22:22:38.055] GetModel::GetModel, Open Local Machine - success
+[INF] [2019-07-23 22:22:38.055] GetModel::GetModel, Open HARDWARE\DESCRIPTION\System\BIOS - success
+[INF] [2019-07-23 22:22:38.055] GetModel::GetModel, End - GX701GX
+[INF] [2019-07-23 22:22:38.077] CheckThrottleGearFile::CheckThrottleGearFile, SetupDirectory : C:\Users\Justin\Downloads\ArmouryCrateService_ASUS_W10_64_V230\9807
+[INF] [2019-07-23 22:22:38.077] GetModel::GetModel, Being - 
+[INF] [2019-07-23 22:22:38.077] GetModel::GetModel, Open Local Machine - success
+[INF] [2019-07-23 22:22:38.077] GetModel::GetModel, Open HARDWARE\DESCRIPTION\System\BIOS - success
+[INF] [2019-07-23 22:22:38.077] GetModel::GetModel, End - GX701GX
+[INF] [2019-07-23 22:22:38.077] InstallFlowProcess::CheckThrottleGearFile, Load Throttle Gear File
+[INF] [2019-07-23 22:22:38.077] InstallFlowProcess::CheckThrottleGearFile, copydest : C:\ProgramData\ASUS\ARMOURY CRATE Service\Data
+[INF] [2019-07-23 22:22:38.077] InstallFlowProcess::CheckThrottleGearFile, copyfixeddest : C:\ProgramData\ASUS\ARMOURY CRATE Config\Data
+[INF] [2019-07-23 22:22:38.086] GetModel::GetModel, Being - 
+[INF] [2019-07-23 22:22:38.086] GetModel::GetModel, Open Local Machine - success
+[INF] [2019-07-23 22:22:38.086] GetModel::GetModel, Open HARDWARE\DESCRIPTION\System\BIOS - success
+[INF] [2019-07-23 22:22:38.086] GetModel::GetModel, End - GX701GX
+[INF] [2019-07-23 22:22:38.086] InstallMSI::InstallMSI, Being - MSI Path : C:\Users\Justin\Downloads\ArmouryCrateService_ASUS_W10_64_V230\9807\ File Name : Service\ArmouryCrate.Service.msi argument : 
+[INF] [2019-07-23 22:22:38.086] InstallMSI::InstallMSI, WorkingDirectory :C:\Users\Justin\Downloads\ArmouryCrateService_ASUS_W10_64_V230\9807\
+[INF] [2019-07-23 22:22:38.086] InstallMSI::InstallMSI, File Name :msiexec Argument : /i Service\ArmouryCrate.Service.msi 
+[INF] [2019-07-23 22:22:54.633] InstallMSI::InstallMSI, Process Exit Code : 1641
+[INF] [2019-07-23 22:22:54.633] InstallMSI::InstallMSI, End - 1641
+[INF] [2019-07-23 22:22:54.633] InstallFlowProcess::InstallFlowProcess, The result of InstallMSI 1641 Argument 
