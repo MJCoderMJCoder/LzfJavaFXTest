@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 public class MainPage extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         System.out.println(getClass().getResource("./mainPage.fxml"));
         Parent root = FXMLLoader.load(getClass().getResource("./mainPage.fxml"));
         primaryStage.setTitle("ROG工具箱");
