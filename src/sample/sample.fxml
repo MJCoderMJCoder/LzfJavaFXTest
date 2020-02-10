@@ -22,7 +22,7 @@
    <children>
       <Accordion>
         <panes>
-          <TitledPane animated="false" text="刘志峰" />
+          <TitledPane animated="true" text="刘志峰" />
         </panes>
       </Accordion>
     <TitledPane animated="false" text="JavaFX测试" GridPane.rowIndex="1" />
